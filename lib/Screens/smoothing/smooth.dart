@@ -1,12 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:project/Screens/smoothing/bilateral.dart';
 import 'package:project/Screens/smoothing/gussian.dart';
 import 'package:project/Screens/smoothing/max.dart';
 import 'package:project/Screens/smoothing/mean.dart';
 import 'package:project/Screens/smoothing/median.dart';
 import 'package:project/Screens/smoothing/min.dart';
-import 'package:project/Screens/smoothing/weighted.dart';
 
 class Smooth extends StatelessWidget {
   final File imageFile;
@@ -22,84 +20,61 @@ class Smooth extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: SingleChildScrollView(
-          scrollDirection:
-              Axis.horizontal, // Make the Row scrollable horizontally
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Mean(imageFile: imageFile)),
-                  );
-                }, // Open image picker when tapped
-                icon: const ImageIcon(AssetImage("assets/Mean.png")),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Weighted(imageFile: imageFile)),
-                  );
-                },
-                icon: const ImageIcon(AssetImage("assets/weighted.png")),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Gussian(imageFile: imageFile)),
-                  );
-                },
-                icon: const ImageIcon(AssetImage("assets/Gussian.png")),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Bilateral(imageFile: imageFile)),
-                  );
-                },
-                icon: const ImageIcon(AssetImage("assets/Billateral.png")),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Max(imageFile: imageFile)),
-                  );
-                },
-                icon: const ImageIcon(AssetImage("assets/Max.png")),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Min(imageFile: imageFile)),
-                  );
-                },
-                icon: const ImageIcon(AssetImage("assets/Min.png")),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Median(imageFile: imageFile)),
-                  );
-                },
-                icon: const ImageIcon(AssetImage("assets/Median.png")),
-              ),
-              // Add more icons here as needed
-            ],
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Mean(imageFile: imageFile)),
+                );
+              }, // Open image picker when tapped
+              icon: const ImageIcon(AssetImage("assets/Mean.png")),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Gussian(imageFile: imageFile)),
+                );
+              },
+              icon: const ImageIcon(AssetImage("assets/Gussian.png")),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Max(imageFile: imageFile)),
+                );
+              },
+              icon: const ImageIcon(AssetImage("assets/Max.png")),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Min(imageFile: imageFile)),
+                );
+              },
+              icon: const ImageIcon(AssetImage("assets/Min.png")),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Median(imageFile: imageFile)),
+                );
+              },
+              icon: const ImageIcon(AssetImage("assets/Median.png")),
+            ),
+            // Add more icons here as needed
+          ],
         ),
       ),
       backgroundColor: Colors.white,

@@ -1,8 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:project/Screens/basic%20ops/basic.dart';
-import 'package:project/Screens/restoration/restoration.dart';
-import 'package:project/Screens/segmentation/segment.dart';
 import 'package:project/Screens/sharpening/sharp.dart';
 import 'package:project/Screens/smoothing/smooth.dart';
 import 'package:project/Screens/transforms/transform.dart';
@@ -51,24 +49,8 @@ class PhotoPage extends StatelessWidget {
               },
               icon: const ImageIcon(AssetImage("assets/Sharping.png")),
             ),
-            IconButton(
-              onPressed: () {
-            Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) =>  Segmentationn(imageFile: imageFile)),
-  );
-              },
-              icon: const ImageIcon(AssetImage("assets/Segmentation.png")),
-            ),
-            IconButton(
-              onPressed: () {
-                            Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) =>  Restoration(imageFile: imageFile)),
-  );
-              },
-              icon: const ImageIcon(AssetImage("assets/Restoration.png")),
-            ),
+
+
             IconButton(
               onPressed: () {
                   Navigator.push(

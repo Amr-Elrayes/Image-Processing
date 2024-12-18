@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:project/Screens/transforms/contrast_stretching.dart';
 import 'package:project/Screens/transforms/gamma.dart';
-import 'package:project/Screens/transforms/histogram.dart';
 import 'package:project/Screens/transforms/logarithmic.dart';
 import 'package:project/Screens/transforms/negative.dart';
 import 'package:project/Screens/transforms/thresholding.dart';
@@ -74,16 +73,6 @@ class Transforms extends StatelessWidget {
                 );
               },
               icon: const ImageIcon(AssetImage("assets/Transform.png")),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Histogram(imageFile: imageFile)),
-                );
-              },
-              icon: const ImageIcon(AssetImage("assets/Histogram.png")),
             ),
             // Add more icons if needed
           ],
